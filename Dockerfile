@@ -15,4 +15,12 @@ WORKDIR /app/fid/lib/oatpp/utility
 
 RUN ./install-oatpp-modules.sh
 
+COPY ./src /app/fid/src
+
+WORKDIR /app/fid
+
+COPY ./CMakeLists.txt /app/fid
+
+RUN mkdir build && cd build && cmake .. && make
+
 ENTRYPOINT ["/bin/bash"]
