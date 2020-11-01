@@ -23,4 +23,8 @@ COPY ./CMakeLists.txt /app/fid
 
 RUN mkdir build && cd build && cmake .. && make
 
-ENTRYPOINT ["/bin/bash"]
+EXPOSE 8000
+
+WORKDIR /app/fid/build
+
+ENTRYPOINT ["./rest-api"]
