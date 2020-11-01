@@ -3,8 +3,8 @@ file(GLOB_RECURSE SRCS
     src/*.cpp
     include/*.h)
 
-find_package(oatpp)
-find_package(oatpp-swagger)
+find_package(oatpp 1.2.0 REQUIRED)
+find_package(oatpp-swagger 1.2.0 REQUIRED)
 
 message(STATUS "---oatpp---")
 message(STATUS "oatpp found " ${oatpp_FOUND})
@@ -21,7 +21,7 @@ message(STATUS "oatpp definitions " ${oatpp-swagger_DEFINITIONS})
 add_definitions(-DOATPP_SWAGGER_RES_PATH="${OATPP_BASE_DIR}/bin/oatpp-swagger/res")
 
 add_library(fid-rest ${SRCS})
-target_link_libraries(fid-rest PUBLIC oatpp oatpp-swagger)
+target_link_libraries(fid-rest PUBLIC oatpp::oatpp oatpp::oatpp-swagger)
 set_target_properties(fid-rest PROPERTIES LINKER_LANGUAGE CXX)
 
 message(STATUS ${CMAKE_CURRENT_SOURCE_DIR}/include " " ${oatpp_INCLUDE_DIRS} " " ${oatpp-swagger_INCLUDE_DIRS})

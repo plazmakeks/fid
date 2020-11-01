@@ -28,6 +28,8 @@ void Server::run() {
   auto swaggerController =
       oatpp::swagger::Controller::createShared(docEndpoints);
 
+  swaggerController->addEndpointsToRouter(router);
+
   /* create server */
 
   oatpp::network::Server server(components.serverConnectionProvider.getObject(),
