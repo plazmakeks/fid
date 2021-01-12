@@ -1,5 +1,5 @@
-#ifndef FID_API_ERROR_HANDLER
-#define FID_API_ERROR_HANDLER
+#ifndef OATPP_TEST_API_ERROR_HANDLER
+#define OATPP_TEST_API_ERROR_HANDLER
 
 #include "dto/status_dto.h"
 

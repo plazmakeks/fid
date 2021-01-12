@@ -1,5 +1,5 @@
-#ifndef FID_API_APP_COMPONENT
-#define FID_API_APP_COMPONENT
+#ifndef OATPP_TEST_API_APP_COMPONENT
+#define OATPP_TEST_API_APP_COMPONENT
 
 #include "error_handler.h"
 #include "swagger_component.h"

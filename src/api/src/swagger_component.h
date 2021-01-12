@@ -1,5 +1,5 @@
-#ifndef FID_API_SWAGGER_COMPONENT
-#define FID_API_SWAGGER_COMPONENT
+#ifndef OATPP_TEST_API_SWAGGER_COMPONENT
+#define OATPP_TEST_API_SWAGGER_COMPONENT
 
 #include <oatpp-swagger/Model.hpp>
 #include <oatpp-swagger/Resources.hpp>

@@ -2,29 +2,29 @@ FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
-RUN apt-get -y install apt-utils
-RUN apt-get -y install git
-RUN apt-get -y install cmake
-RUN apt-get -y install make
-RUN apt-get -y install g++
+RUN apt-get update && apt-get install -y \
+    apt-utils \
+    git \
+    cmake \
+    make \
+    g++
 
-ADD ./lib/oatpp /app/fid/lib/oatpp
+ADD ./lib/oatpp /app/oatpp-test/lib/oatpp
 
-WORKDIR /app/fid/lib/oatpp/utility
+WORKDIR /app/oatpp-test/lib/oatpp/utility
 
 RUN ./install-oatpp-modules.sh
 
-COPY ./src /app/fid/src
+COPY ./src /app/oatpp-test/src
 
-WORKDIR /app/fid
+WORKDIR /app/oatpp-test
 
-COPY ./CMakeLists.txt /app/fid
+COPY ./CMakeLists.txt /app/oatpp-test
 
 RUN mkdir build && cd build && cmake .. && make
 
 EXPOSE 8000
 
-WORKDIR /app/fid/build
+WORKDIR /app/oatpp-test/build
 
 ENTRYPOINT ["./rest-api"]

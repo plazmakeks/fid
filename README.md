@@ -9,6 +9,6 @@ $ cmake .. && make
 run in docker
 
 ```
-$ docker build -t fid .
-$ docker run -p 8000:8000 fid
+$ docker build -t oatpp-test .
+$ docker run -p 8000:8000 oatpp-test
 ```
